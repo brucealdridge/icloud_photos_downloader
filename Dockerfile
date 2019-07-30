@@ -9,9 +9,8 @@ RUN set -xe && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
 
-ARG ICLOUDPD_VERSION
 RUN set -xe \
-  && pip install icloudpd==${ICLOUDPD_VERSION} \
+  && pip install icloudpd==1.4.1 \
   && icloudpd --version \
   && icloud -h | head -n1
 
